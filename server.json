@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "tr.com.metasearch/metasearch-mcp",
+  "title": "metasearch MCP",
+  "description": "Hotel and travel feed validation, normalization and requirement comparison.",
+  "version": "1.1.0",
+  "websiteUrl": "https://metasearch.com.tr/en/mcp",
+  "repository": {
+    "url": "https://github.com/metasearchcomtr/metasearch-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://metasearch.com.tr/mcp"
+    }
+  ]
+}
