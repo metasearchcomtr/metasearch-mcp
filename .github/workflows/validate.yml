@@ -13,5 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Validate server.json syntax
+
+      - name: Install mcp-publisher
+        run: |
+          set -euo pipefail
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+          chmod +x ./mcp-publisher
+
+      - name: Validate server.json
+        run: ./mcp-publisher validate server.json
+
+      - name: Validate canonical identity
         run: node -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync('server.json','utf8')); if(x.name!=='tr.com.metasearch/metasearch-mcp') process.exit(1); if(!x.remotes?.some(r=>r.url==='https://metasearch.com.tr/mcp')) process.exit(1);"
