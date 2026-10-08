@@ -1,0 +1,12 @@
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+mcp-registry-key.pem
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
