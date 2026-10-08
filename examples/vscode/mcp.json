@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "metasearch": {
+      "type": "http",
+      "url": "https://metasearch.com.tr/mcp"
+    }
+  }
+}
