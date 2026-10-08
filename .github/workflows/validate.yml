@@ -1,0 +1,17 @@
+name: Validate MCP metadata
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Validate server.json syntax
+        run: node -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync('server.json','utf8')); if(x.name!=='tr.com.metasearch/metasearch-mcp') process.exit(1); if(!x.remotes?.some(r=>r.url==='https://metasearch.com.tr/mcp')) process.exit(1);"
