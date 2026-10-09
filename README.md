@@ -41,7 +41,7 @@ The server gives AI agents deterministic tools for hotel-feed workflows:
 | Criteo Catalog | Readiness / mapping pre-check |
 | Generic hotel master data | Platform-independent quality check |
 
-Published-contract and readiness modes are deliberately kept separate. Undocumented mandatory fields are not invented.
+Published-contract validation and readiness checks are deliberately kept separate. Undocumented mandatory fields are not invented.
 
 ## Connect
 
@@ -119,7 +119,7 @@ The validation workflow is designed not to persist submitted feed payloads. Oper
 
 Do not send credentials or secrets as feed content. See [docs/privacy-and-security.md](docs/privacy-and-security.md) and [SECURITY.md](SECURITY.md).
 
-## Official MCP Registry
+## Registry and discovery
 
 The canonical registry descriptor is [`server.json`](server.json).
 
@@ -130,6 +130,8 @@ tr.com.metasearch/metasearch-mcp
 ```
 
 The namespace is authenticated using ownership of `metasearch.com.tr`.
+
+For third-party registry and directory submissions, use the canonical metadata in [docs/discovery.md](docs/discovery.md). This keeps names, descriptions, categories, endpoint details and privacy claims consistent across listings.
 
 ## Companion CLI and Node.js SDK
 
@@ -147,6 +149,10 @@ Source: [metasearchcomtr/feed-validator](https://github.com/metasearchcomtr/feed
 - [Hotel Feed Validator](https://metasearch.com.tr/en/tools/hotel-feed-validator)
 - [Hotel feed requirements comparison](https://metasearch.com.tr/en/compare/hotel-feed-requirements)
 - [Validate hotel feeds with MCP](https://metasearch.com.tr/en/resources/validate-hotel-feeds-with-mcp)
+- [Client setup](docs/client-setup.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [Discovery metadata](docs/discovery.md)
+- [Changelog](CHANGELOG.md)
 
 ## Contributing
 
